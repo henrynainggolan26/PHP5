@@ -1,6 +1,5 @@
 <?php
 	include_once 'db.php';
-	$user = $_SESSION['username'];
 	session_start();
 	$count_sidebar = $_SESSION['count_sidebar']; 
 	$con = new DB_con();
@@ -58,8 +57,5 @@
 		}
 		echo "</table>";
 	}
-?>
-
-<?php
 	include_once('footer.php');
 ?>
