@@ -1,4 +1,8 @@
 <?php
+
+/**
+* sample comment
+*/
 	class DB_con
 	{
 		var $conn = false;
