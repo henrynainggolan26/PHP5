@@ -29,9 +29,14 @@ echo nl2br("Welcome : " .$_SESSION['username']. "<br>" . PHP_EOL);
 </form>
 <?php
 if(isset($_POST['update'])){
-	$passwordold = $_POST['passwordold'];
-	$passwordnew = $_POST['passwordnew'];
-	$con->updatepass($passwordnew,$passwordold);
-	header('Location: profile.php');
+	if($_SESSION['password'] == $_POST['passwordold']){
+		$passwordold = $_POST['passwordold'];
+		$passwordnew = $_POST['passwordnew'];
+		$con->updatepass($passwordnew,$passwordold);
+		header('Location: profile.php');
+	}
+	else{
+		echo "Password wrong";
+	}
 }
 include_once 'footer.php';	
